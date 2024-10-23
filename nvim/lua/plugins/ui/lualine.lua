@@ -14,8 +14,18 @@ return {
     options = {
       theme = "dracula",
       globalstatus = true,
+      section_separators = { left = "", right = "" },
+      component_separators = { left = "", right = "" },
     },
     sections = {
+      lualine_c = {
+        {
+          "filename",
+          newfile_status = true,
+          path = 1,
+          symbols = filename_icons,
+        },
+      },
       lualine_x = {
         {
           require("lazy.status").updates,
@@ -23,12 +33,25 @@ return {
           color = { fg = "#ff9e64" },
         },
       },
-      lualine_c = {
+      lualine_y = {
         {
-          "filename",
-          newfile_status = true,
-          path = 1,
-          symbols = filename_icons,
+          function()
+            return vim.lsp.get_clients()[1].name
+          end,
+          cond = function()
+            return #vim.lsp.get_clients() > 0
+          end,
+          icon = { " " },
+        },
+        -- NOTE: to handle two clients (python)
+        {
+          function()
+            return vim.lsp.get_clients()[2].name
+          end,
+          cond = function()
+            return #vim.lsp.get_clients() == 2
+          end,
+          icon = { " " },
         },
       },
     },
