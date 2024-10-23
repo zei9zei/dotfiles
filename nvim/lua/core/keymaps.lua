@@ -37,8 +37,8 @@ vim.keymap.set("n", "<leader>un", ":set number!<CR>", { desc = "Toggle line numb
 -- Quickfix
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open buffer [Q]uickfix list" })
 vim.keymap.set("n", "<leader>Q", vim.diagnostic.setqflist, { desc = "Open [Q]uickfix list" })
-vim.keymap.set("n", "]q", ":cnext<CR>", { desc = "Go next quickfix item" })
-vim.keymap.set("n", "[q", ":cprev<CR>", { desc = "Go previous quickfix item" })
+vim.keymap.set("n", "]d", ":cnext<CR>", { desc = "Go next quickfix item" })
+vim.keymap.set("n", "[d", ":cprev<CR>", { desc = "Go previous quickfix item" })
 
 -- Plugins
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { desc = "Open [L]azy UI" })
