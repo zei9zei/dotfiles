@@ -24,5 +24,27 @@ return {
       -- { "<C-\\>", ":Oil --float<CR>", desc = "Open floating file browser" },
       { "-", ":Oil<CR>", desc = "Open file browser" },
     },
+    enabled = false,
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    init = function()
+      -- disable netrw at the very start of your init.lua
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      -- optionally enable 24-bit colour
+      vim.opt.termguicolors = true
+    end,
+    opts = {},
+    keys = {
+      { "<leader>e", ":NvimTreeToggle<CR>", desc = "File [E]xplorer" },
+    },
+    enabled = true,
   },
 }
