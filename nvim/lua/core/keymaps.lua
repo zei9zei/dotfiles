@@ -29,6 +29,11 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Goes to the prev result on the seach
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
 
+-- ui mappings
+vim.keymap.set("n", "<leader>uw", ":set wrap!<CR>", { desc = "Toggle line wrap" })
+vim.keymap.set("n", "<leader>ur", ":set relativenumber!<CR>", { desc = "Toggle relative line number" })
+vim.keymap.set("n", "<leader>un", ":set number!<CR>", { desc = "Toggle line number" })
+
 -- Plugins
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { desc = "Open [L]azy UI" })
 vim.keymap.set("n", "<leader>cm", ":Mason<CR>", { desc = "Open [M]ason UI" })
