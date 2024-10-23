@@ -7,4 +7,4 @@ Settings:
 - python setup [interactive shells -> ipython ]
 
 Plugins:
-- lualine add lsp info
+- snippets and cmp
