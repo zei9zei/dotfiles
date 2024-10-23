@@ -1,11 +1,17 @@
 return {
   "folke/trouble.nvim",
   opts = {}, -- for default options, refer to the configuration section for custom setup.
+  config = function(opts)
+    require("trouble").setup(opts)
+    vim.keymap.set("n", "]x", require("trouble").next, { desc = "Trouble next item" })
+    vim.keymap.set("n", "[x", require("trouble").prev, { desc = "Trouble previous item" })
+  end,
+  enabled = false,
   cmd = "Trouble",
   keys = {
     {
       "<leader>xx",
-      "<cmd>Trouble diagnostics toggle<cr>",
+      "<cmd>Trouble diagnostics toggle jump=true<cr>",
       desc = "[X] Trouble Diagnostics ",
     },
     {

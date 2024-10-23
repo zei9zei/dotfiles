@@ -7,5 +7,4 @@ Settings:
 - python setup [interactive shells -> ipython ]
 
 Plugins:
-- trouble [ add keymaps for quickfix list]
-- telescope [ add keymaps for quickfix list]
+- lualine add lsp info
