@@ -4,7 +4,7 @@
 
 Settings:
 
-- python setup [interactive shells -> ipython ]
+- Note: python send selection not working
 
 Plugins:
 - snippets and cmp
