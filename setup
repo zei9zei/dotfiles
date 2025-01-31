@@ -9,9 +9,12 @@ mkdir -p "$XDG_CONFIG_HOME"
 ln -s "$HOME/dotfiles/nvim" "$XDG_CONFIG_HOME/nvim"
 
 # Packages to brew install
-packages=("neovim" "lazygit" "fd" "fzf" "ripgrep" "gcc")
+packages=("lazygit" "fd" "fzf" "ripgrep" "gcc")
 
-brew update && for package in "${packages[@]}"; do brew install "$package"; done
+for package in "${packages[@]}"; do
+  echo "Installing $package..."
+  /home/linuxbrew/.linuxbrew/bin/brew install "$package"
+done
 
 # Final message
 echo "Setup completed"
