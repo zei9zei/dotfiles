@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# Lista dei pacchetti da installare
+# Config home
+XDG_CONFIG_HOME="$HOME/.config"
+
+mkdir -p "$XDG_CONFIG_HOME"
+
+# symlinks
+ln -s "$HOME/dotfiles/nvim" "$XDG_CONFIG_HOME/nvim"
+
+# Packages to brew install
 packages=("neovim" "lazygit" "fd" "fzf" "ripgrep" "gcc")
 
-# Aggiorna Homebrew e installa i pacchetti
 brew update && for package in "${packages[@]}"; do brew install "$package"; done
 
-# Crea la cartella .config/nvim
-mkdir -p ~/.config/nvim
-
-# Crea un symlink
-ln -s "$(pwd)/nvim" ~/.config/nvim
-
-# Messaggio di completamento
-echo "Installazione completata!"
+# Final message
+echo "Setup completed"
